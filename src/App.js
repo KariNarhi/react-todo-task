@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Bar from "./components/Bar";
-import Hello from "./components/Hello";
+import TodoItem from "./components/TodoItem";
 import "./App.css";
 
 const App = () => {
@@ -65,7 +65,7 @@ const App = () => {
     for (let i = 0; i < todos.length; i++) {
       var todo = todos[i];
       retVal.push(
-        <Hello
+        <TodoItem
           key={todo.id}
           todo={todo}
           onClick={onClick}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hello = ({ todo, onClick, onRemoveClick }) => {
+const TodoItem = ({ todo, onClick, onRemoveClick }) => {
   var color;
   var text;
 
@@ -26,4 +26,4 @@ const Hello = ({ todo, onClick, onRemoveClick }) => {
   );
 };
 
-export default Hello;
+export default TodoItem;
