@@ -4,6 +4,7 @@ import Hello from "./components/Hello";
 import "./App.css";
 
 const App = () => {
+  // Initial state Hooks
   const [newTodoName, setNewTodoName] = useState("");
   const [todos, setTodos] = useState([
     { id: 1, name: "Go to the supermarket", complete: false },
@@ -13,10 +14,12 @@ const App = () => {
     { id: 5, name: "Change car tyres", complete: false }
   ]);
 
+  // Generate ID for todo items
   const generateNewId = () => {
     return todos.length + 1;
   };
 
+  // Add new todo item on submit
   const onSubmit = event => {
     event.preventDefault();
 
@@ -31,6 +34,7 @@ const App = () => {
     setNewTodoName("");
   };
 
+  // Change completed status for clicked item
   const onClick = id => {
     var todoItems = todos.slice();
     for (let i = 0; i < todos.length; i++) {
@@ -43,15 +47,18 @@ const App = () => {
     setTodos(todoItems);
   };
 
+  // Set name for the new todo item
   const onChange = event => {
     setNewTodoName(event.target.value);
   };
 
+  // Remove todo item
   const onRemoveClick = id => {
     //implement this logic
     console.log("Remove Item!");
   };
 
+  // Create todo item list
   const todoItems = () => {
     var retVal = [];
 

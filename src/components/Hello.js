@@ -4,6 +4,7 @@ const Hello = ({ todo, onClick, onRemoveClick }) => {
   var color;
   var text;
 
+  // Change todo item status text and color
   if (todo.complete === true) {
     color = "lightgreen";
     text = "Complete";
