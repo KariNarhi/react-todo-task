@@ -1,10 +1,10 @@
 import React from "react";
 
-function Hello() {
+const Hello = ({ todo, onClick, onRemoveClick }) => {
   var color;
   var text;
 
-  if (this.props.todo.complete === true) {
+  if (todo.complete === true) {
     color = "lightgreen";
     text = "Complete";
   } else {
@@ -14,21 +14,15 @@ function Hello() {
 
   return (
     <div className="wrapper" style={{ backgroundColor: color }}>
-      <h3>{this.props.todo.name}</h3>
-      <button
-        className="btn"
-        onClick={() => this.props.onClick(this.props.todo.id)}
-      >
+      <h3>{todo.name}</h3>
+      <button className="btn" onClick={() => onClick(todo.id)}>
         {text}
       </button>
-      <button
-        className="btn"
-        onClick={() => this.props.onRemoveClick(this.props.todo.id)}
-      >
+      <button className="btn" onClick={() => onRemoveClick(todo.id)}>
         Remove from list
       </button>
     </div>
   );
-}
+};
 
 export default Hello;

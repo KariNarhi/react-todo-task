@@ -1,22 +1,22 @@
 import React from "react";
 
-function Bar() {
+const Bar = ({ onSubmit, newTodoName, onInputChange }) => {
   return (
     <form
       className="wrapper"
       style={{ "grid-template-columns": "7fr 2fr" }}
-      onSubmit={this.props.onSubmit}
+      onSubmit={onSubmit}
     >
       <input
         placeholder="Add new todo"
-        value={this.props.newTodoName}
-        onChange={this.props.onInputChange}
+        value={newTodoName}
+        onChange={onInputChange}
       />
       <button className="btn btn-success" type="submit" value="Submit">
         Submit
       </button>
     </form>
   );
-}
+};
 
 export default Bar;

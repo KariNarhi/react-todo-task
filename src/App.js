@@ -1,4 +1,6 @@
 import React from "react";
+import Bar from "./components/Bar";
+import Hello from "./components/Hello";
 import "./App.css";
 
 const todos = [
