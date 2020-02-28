@@ -4,7 +4,7 @@ const Bar = ({ onSubmit, newTodoName, onInputChange }) => {
   return (
     <form
       className="wrapper"
-      style={{ "grid-template-columns": "7fr 2fr" }}
+      style={{ gridTemplateColumns: "7fr 2fr" }}
       onSubmit={onSubmit}
     >
       <input
