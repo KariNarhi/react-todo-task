@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Bar from "./components/Bar";
-import TodoItem from "./components/TodoItem";
+import TodoItemList from "./components/TodoItemList";
 import "./App.css";
 
 const App = () => {
@@ -58,27 +58,13 @@ const App = () => {
     console.log("Remove Item!");
   };
 
-  // Create todo item list
-  const todoItems = () => {
-    var retVal = [];
-
-    for (let i = 0; i < todos.length; i++) {
-      var todo = todos[i];
-      retVal.push(
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          onClick={onClick}
-          onRemoveClick={onRemoveClick}
-        />
-      );
-    }
-    return retVal;
-  };
-
   return (
     <div className="">
-      {todoItems()}
+      <TodoItemList
+        todos={todos}
+        onClick={onClick}
+        onRemoveClick={onRemoveClick}
+      />
       <Bar
         onSubmit={onSubmit}
         newTodoName={newTodoName}
