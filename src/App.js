@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import Bar from "./components/Bar";
 import TodoItemList from "./components/TodoItemList";
 import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
   // Initial state Hooks
   const [newTodoName, setNewTodoName] = useState("");
   const [todos, setTodos] = useState([
-    { id: 1, name: "Go to the supermarket", complete: false },
-    { id: 2, name: "Call Alice", complete: false },
-    { id: 3, name: "Ask Alice to call Bob", complete: false },
-    { id: 4, name: "Do the dishes", complete: false },
-    { id: 5, name: "Change car tyres", complete: false }
+    { id: uuidv4(), name: "Go to the supermarket", complete: false },
+    { id: uuidv4(), name: "Call Alice", complete: false },
+    { id: uuidv4(), name: "Ask Alice to call Bob", complete: false },
+    { id: uuidv4(), name: "Do the dishes", complete: false },
+    { id: uuidv4(), name: "Change car tyres", complete: false }
   ]);
 
   // Generate ID for todo items
   const generateNewId = () => {
-    return todos.length + 1;
+    const newID = uuidv4();
+    return newID;
   };
 
   // Add new todo item on submit
@@ -57,8 +59,17 @@ const App = () => {
 
   // Remove todo item
   const onRemoveClick = id => {
-    //implement this logic
-    console.log("Remove Item!");
+    const newTodos = [...todos];
+
+    var removeIndex = newTodos
+      .map(todo => {
+        return todo.id;
+      })
+      .indexOf(id);
+
+    newTodos.splice(removeIndex, 1);
+
+    setTodos(newTodos);
   };
 
   return (
