@@ -1,17 +1,9 @@
 import React from "react";
 
 const TodoItem = ({ todo, onClick, onRemoveClick }) => {
-  var color;
-  var text;
-
-  // Change todo item status text and color
-  if (todo.complete === true) {
-    color = "lightgreen";
-    text = "Complete";
-  } else {
-    color = "pink";
-    text = "Incomplete";
-  }
+  // Todo item color and text changes based on todo.complete state
+  var color = todo.complete === true ? "lightgreen" : "pink";
+  var text = todo.complete === true ? "Complete" : "Incomplete";
 
   return (
     <div className="wrapper" style={{ backgroundColor: color }}>
