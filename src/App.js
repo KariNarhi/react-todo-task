@@ -23,15 +23,18 @@ const App = () => {
   const onSubmit = event => {
     event.preventDefault();
 
-    var newTodos = todos.slice();
-    newTodos.push({
-      id: generateNewId(),
-      name: newTodoName,
-      complete: false
-    });
+    // Add item only if input is not empty
+    if (newTodoName !== "") {
+      var newTodos = todos.slice();
+      newTodos.push({
+        id: generateNewId(),
+        name: newTodoName,
+        complete: false
+      });
 
-    setTodos(newTodos);
-    setNewTodoName("");
+      setTodos(newTodos);
+      setNewTodoName("");
+    }
   };
 
   // Change completed status for clicked item
