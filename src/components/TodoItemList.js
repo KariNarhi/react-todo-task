@@ -5,8 +5,7 @@ const TodoItemList = ({ todos, onClick, onRemoveClick }) => {
   var items = [];
 
   // Create todo item list
-  for (let i = 0; i < todos.length; i++) {
-    var todo = todos[i];
+  todos.forEach(todo => {
     items.push(
       <TodoItem
         key={todo.id}
@@ -15,7 +14,8 @@ const TodoItemList = ({ todos, onClick, onRemoveClick }) => {
         onRemoveClick={onRemoveClick}
       />
     );
-  }
+  });
+
   return items;
 };
 
