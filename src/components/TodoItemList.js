@@ -2,12 +2,12 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 const TodoItemList = ({ todos, onClick, onRemoveClick }) => {
-  var retVal = [];
+  var items = [];
 
   // Create todo item list
   for (let i = 0; i < todos.length; i++) {
     var todo = todos[i];
-    retVal.push(
+    items.push(
       <TodoItem
         key={todo.id}
         todo={todo}
@@ -16,7 +16,7 @@ const TodoItemList = ({ todos, onClick, onRemoveClick }) => {
       />
     );
   }
-  return retVal;
+  return items;
 };
 
 export default TodoItemList;
