@@ -2,7 +2,7 @@ import React from "react";
 
 const TodoItem = ({ todo, todos, setTodos }) => {
   // Todo item color and text changes based on todo.complete state
-  var color = todo.complete === true ? "lightgreen" : "pink";
+  var color = todo.complete === true ? "lightgreen" : "bisque";
   var text = todo.complete === true ? "Complete" : "Incomplete";
 
   // Change completed status for clicked item
@@ -34,13 +34,22 @@ const TodoItem = ({ todo, todos, setTodos }) => {
   };
 
   return (
-    <div className="wrapper" style={{ backgroundColor: color }}>
-      <h3>{todo.name}</h3>
-      <button className="btn" onClick={() => changeStatus(todo.id)}>
+    <div
+      className="row mt-2 mr-1 ml-1 todoItem"
+      style={{ backgroundColor: color }}
+    >
+      <h5 className="col-sm text-center">{todo.name}</h5>
+      <button
+        className="btn btn-info col-sm-3"
+        onClick={() => changeStatus(todo.id)}
+      >
         {text}
       </button>
-      <button className="btn" onClick={() => deleteItem(todo.id)}>
-        Remove from list
+      <button
+        className="btn btn-danger col-sm-2"
+        onClick={() => deleteItem(todo.id)}
+      >
+        Delete
       </button>
     </div>
   );

@@ -29,16 +29,17 @@ const AddItemBar = ({ todos, setTodos }) => {
 
   return (
     <form
-      className="wrapper"
+      className="row mt-2 mr-1 ml-1 mb-1"
       style={{ gridTemplateColumns: "7fr 2fr" }}
       onSubmit={onSubmit}
     >
       <input
+        className="col rounded"
         placeholder="Add new todo"
         value={newTodoName}
         onChange={onChange}
       />
-      <button className="btn btn-success" type="submit" value="Submit">
+      <button className="btn btn-success col-3" type="submit" value="Submit">
         Submit
       </button>
     </form>
