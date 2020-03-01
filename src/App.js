@@ -5,7 +5,7 @@ import "./App.css";
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
-  // Initial state Hooks
+  // Initial state for todos
   const [todos, setTodos] = useState([
     { id: uuidv4(), name: "Go to the supermarket", complete: false },
     { id: uuidv4(), name: "Call Alice", complete: false },
