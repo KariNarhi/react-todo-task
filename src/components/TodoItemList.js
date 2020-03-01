@@ -5,7 +5,7 @@ const TodoItemList = ({ todos, setTodos }) => {
   var items = [];
 
   // Change completed status for clicked item
-  const onClick = id => {
+  const changeStatus = id => {
     var todoItems = todos.slice();
     for (let i = 0; i < todos.length; i++) {
       if (todoItems[i].id === id) {
@@ -18,7 +18,7 @@ const TodoItemList = ({ todos, setTodos }) => {
   };
 
   // Remove todo item
-  const onRemoveClick = id => {
+  const deleteItem = id => {
     const newTodos = [...todos];
 
     var removeIndex = newTodos
@@ -38,8 +38,8 @@ const TodoItemList = ({ todos, setTodos }) => {
       <TodoItem
         key={todo.id}
         todo={todo}
-        onClick={onClick}
-        onRemoveClick={onRemoveClick}
+        changeStatus={changeStatus}
+        deleteItem={deleteItem}
       />
     );
   });
