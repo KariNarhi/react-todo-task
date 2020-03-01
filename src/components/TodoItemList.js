@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoItemList = ({ todos = [], setTodos }) => {
+const TodoItemList = ({ todos, setTodos }) => {
   var items = [];
 
   // Create todo item list
