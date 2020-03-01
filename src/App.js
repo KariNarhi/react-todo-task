@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Bar from "./components/Bar";
+import AddItemBar from "./components/AddItemBar";
 import TodoItemList from "./components/TodoItemList";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
@@ -79,7 +79,7 @@ const App = () => {
         onClick={onClick}
         onRemoveClick={onRemoveClick}
       />
-      <Bar
+      <AddItemBar
         onSubmit={onSubmit}
         newTodoName={newTodoName}
         onInputChange={onChange}

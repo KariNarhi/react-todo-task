@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bar = ({ onSubmit, newTodoName, onInputChange }) => {
+const AddItemBar = ({ onSubmit, newTodoName, onInputChange }) => {
   return (
     <form
       className="wrapper"
@@ -19,4 +19,4 @@ const Bar = ({ onSubmit, newTodoName, onInputChange }) => {
   );
 };
 
-export default Bar;
+export default AddItemBar;
