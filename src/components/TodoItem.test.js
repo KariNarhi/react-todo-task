@@ -43,7 +43,7 @@ describe("<TodoItem /> UI tests", () => {
 });
 
 describe("<TodoItem /> click event tests", () => {
-  it("should change complete status when clicked", () => {
+  it("should toggle complete status when clicked", () => {
     const wrapper = mount(<App />);
     const item = wrapper.find(TodoItem);
 
