@@ -1,7 +1,5 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 import { shallow, mount } from "enzyme";
-import { spy } from "sinon";
 import App from "../App";
 import AddItemBar from "./AddItemBar";
 import TodoItem from "./TodoItem";
@@ -30,10 +28,15 @@ describe("<AddItemBar/> UI tests", () => {
   });
 });
 
-// describe("<AddItemBar/> event tests", () => {
-//   it("should submit a new todo on click", () => {
-//     const wrapper = mount(<App />);
-//     const itemBar = wrapper.find(AddItemBar);
-
-//   });
-// });
+describe("<AddItemBar/> event test", () => {
+  it("should submit new todo on submit", () => {
+    const wrapper = mount(<App />);
+    const itemBar = wrapper.find(AddItemBar);
+    itemBar.find("input").simulate("change", { target: { value: "New Todo" } });
+    itemBar.find("button").simulate("submit");
+    const todoItem = wrapper.find(TodoItem);
+    expect(
+      todoItem.contains([<h5 className="col-sm text-center">New Todo</h5>])
+    ).toBeTruthy();
+  });
+});
