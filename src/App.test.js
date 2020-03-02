@@ -1,8 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import App from "./App";
+import TodoItemList from "./components/TodoItemList";
+import AddItemBar from "./components/AddItemBar";
 
-test("should render without problems", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+describe("<App/>", () => {
+  it("should render without problems", () => {
+    shallow(<App />);
+  });
+
+  it("should have a TodoItemList component", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(TodoItemList).length).toEqual(1);
+  });
+
+  it("should have an AddItemBar component", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(AddItemBar).length).toEqual(1);
+  });
 });

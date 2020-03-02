@@ -4,18 +4,34 @@ import { v4 as uuidv4 } from "uuid";
 import { shallow } from "enzyme";
 
 describe("<TodoItem />", () => {
-  const todo = { id: uuidv4(), name: "Learn React", complete: false };
-  const todos = [];
-
   it("should render without problems", () => {
+    const todo = { id: uuidv4(), name: "Learn React", complete: false };
     shallow(<TodoItem todo={todo} />);
   });
 
-  it("should change status", () => {
-    const wrapper = shallow(
-      <TodoItem todo={todo} todos={todos} setTodos={setTodos} />
-    );
-    wrapper.find("button.btn-info").simulate("click");
-    expect(todo.complete).toBeTruthy();
+  it("shallow wrapper instance should be null", () => {
+    const todo = { id: uuidv4(), name: "Learn React", complete: false };
+    const wrapper = shallow(<TodoItem todo={todo} />);
+    const instance = wrapper.instance();
+
+    expect(instance).toEqual(null);
+  });
+
+  it("should have todo text", () => {
+    const todo = { id: uuidv4(), name: "Learn React", complete: false };
+    const wrapper = shallow(<TodoItem todo={todo} />);
+    expect(wrapper.find("h5").length).toEqual(1);
+  });
+
+  it("should have a complete button", () => {
+    const todo = { id: uuidv4(), name: "Learn React", complete: false };
+    const wrapper = shallow(<TodoItem todo={todo} />);
+    expect(wrapper.find("button.btn-info").length).toEqual(1);
+  });
+
+  it("should have a delete button", () => {
+    const todo = { id: uuidv4(), name: "Learn React", complete: false };
+    const wrapper = shallow(<TodoItem todo={todo} />);
+    expect(wrapper.find("button.btn-danger").length).toEqual(1);
   });
 });
