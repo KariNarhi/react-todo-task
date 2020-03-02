@@ -1,9 +1,9 @@
 import React from "react";
-import TodoItem from "./TodoItem";
+import TodoItem from "../TodoItem";
 import { v4 as uuidv4 } from "uuid";
 import { shallow, mount } from "enzyme";
 import { spy } from "sinon";
-import App from "../App";
+import App from "../../App";
 
 describe("<TodoItem /> UI tests", () => {
   let todo, todos, wrapper, funcSpy;

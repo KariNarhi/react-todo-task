@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import App from "../App";
-import AddItemBar from "./AddItemBar";
-import TodoItem from "./TodoItem";
+import App from "../../App";
+import AddItemBar from "../AddItemBar";
+import TodoItem from "../TodoItem";
 
 describe("<AddItemBar/> UI tests", () => {
   let wrapper;

@@ -1,8 +1,8 @@
 import React from "react";
-import TodoItemList from "./TodoItemList";
+import TodoItemList from "../TodoItemList";
 import { v4 as uuidv4 } from "uuid";
 import { shallow } from "enzyme";
-import TodoItem from "./TodoItem";
+import TodoItem from "../TodoItem";
 
 describe("<TodoItemList />", () => {
   it("should render without problems", () => {
